@@ -1,15 +1,11 @@
-
 import React from 'react'
 import VendorList from './components/VendorList';
 import './stylesheets/vendor.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Vendor from './components/Vendor'
 
-
-
 function App() {
-  return (
-   
+  return (   
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<VendorList />} />

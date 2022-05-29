@@ -1,4 +1,4 @@
-import {vendorGetAll , vendorError , vendorLoading , hasMore , pageNumber} from '../Actions/actionTypes'
+import {vendorGetAll , vendorError , vendorLoading , hasMore , pageNumber, test} from '../Actions/actionType'
 
 const initialState = {
    loading : true,
@@ -7,8 +7,11 @@ const initialState = {
    hasMore : false,
    pageNumber : 1
 }
-function vendorReducer(state = initialState , action){
+
+    function vendorReducer(state = 0 , action){
     switch (action.type) {
+        case test: 
+            return state + 1
         case vendorGetAll:
            return {...state , vendors : state.vendors};
         case vendorError:

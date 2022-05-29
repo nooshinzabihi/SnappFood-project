@@ -29,7 +29,7 @@ function VendorDetails(props) {
 
 VendorDetails.defaultProps = {
     default :{
-        coverPath :"hhh",
+        coverPath :"",
         description : '.......'
     }
 };

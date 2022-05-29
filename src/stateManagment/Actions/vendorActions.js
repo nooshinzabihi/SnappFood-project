@@ -1,5 +1,10 @@
-import {vendorGetAll , vendorError , vendorLoading , hasMore  , pageNumber}from './actionTypes'
+import {vendorGetAll , vendorError , vendorLoading , hasMore  , pageNumber, test} from './actionType'
 
+export const testAct =()=>{
+    return {
+        type: test,
+    }
+}
 
 export const getAll =()=>({
     type: vendorGetAll,
