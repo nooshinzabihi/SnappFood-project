@@ -8,7 +8,7 @@ const initialState = {
    pageNumber : 1
 }
 
-    function vendorReducer(state = 0 , action){
+    function vendorReducer(state = initialState , action){
     switch (action.type) {
         case test: 
             return state + 1
@@ -20,10 +20,12 @@ const initialState = {
             return  state.loading = !state.loading;
         case hasMore:
             return state.hasMore = !state.hasMore;
-        case hasMore:
-            return state.pageNumber = state.pageNumber + 1;   
+        case pageNumber:
+            return {...state , pageNumber : state.pageNumber + 1};   
         default:
             return state;
+            
     }
+    
 }
 export default vendorReducer;

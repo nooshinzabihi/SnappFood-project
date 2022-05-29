@@ -2,10 +2,16 @@ import React , {  useState , useRef , useCallback} from 'react';
 import { Link } from 'react-router-dom';
 import useVendorList from '../useVendorList'
 import VendorDetails from './VendorDetails';
+import { useDispatch , useSelector } from 'react-redux';
+import { getPageNumber } from '../stateManagment/Actions/vendorActions'
+
 
 
 function VendorList (){
-    const [pageNumber, setPageNumber] = useState(1);
+    // const [pageNumber, setPageNumber] = useState(1);
+    const dispatch = useDispatch();
+    const pageNumber =  useSelector(state => state.vendorState.pageNumber)
+   
     const { 
         loading ,
         error ,
@@ -20,7 +26,8 @@ function VendorList (){
         if (observer.current) observer.current.disconnect();
         observer.current = new IntersectionObserver((entries )=> {
           if (entries[0].isIntersecting && hasMore) {
-            setPageNumber((prevPageNumber) => prevPageNumber + 1)
+            // setPageNumber((prevPageNumber) => prevPageNumber + 1)
+            dispatch(getPageNumber())
           }
         })
         if (node) observer.current.observe(node)
