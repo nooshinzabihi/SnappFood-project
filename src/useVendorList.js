@@ -22,7 +22,7 @@ export default function useVendorList(pageNumber) {
             }
         }).then(res => {
             setVendors(prevVendor => {
-                return [...new Set([...prevVendor , ...res.data.data.finalResult.map(v =>v.data.title)])]
+                return [...new Set([...prevVendor , ...res.data.data.finalResult.map(v =>v.data)])]
             })
             setHasMore(res.data.data.finalResult.length > 0)
             setLoading(false)

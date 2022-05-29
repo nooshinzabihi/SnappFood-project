@@ -1,6 +1,8 @@
 import React , {  useState , useRef , useCallback} from 'react';
 import { Link } from 'react-router-dom';
 import useVendorList from '../useVendorList'
+import VendorDetails from './VendorDetails';
+
 
 function VendorList (){
     const [pageNumber, setPageNumber] = useState(1);
@@ -10,6 +12,8 @@ function VendorList (){
         vendors ,
         hasMore 
     } = useVendorList (pageNumber)
+
+    console.log(vendors , 55555);
 
     const observer = useRef();
     const lastVendorElementRef = useCallback((node )=> {
@@ -27,19 +31,20 @@ function VendorList (){
         <div className="container">
             <div className ="vendors__item__box">
                 {vendors.map((vendor , index) => {
+                    console.log(vendor)
                     if (vendors.length === index + 1 ){
-                        return <div className ="vendors__item">
-                                <Link to = {`${vendor}`} className="vendors__link">
+                        return <div className ="vendors__item" >
+                                <Link to = {`${vendor.title}`} className="vendors__link">
                                     <section ref={lastVendorElementRef} key ={index} className ="vendors__section__item">
-                                        <h3>{vendor}</h3>
+                                        <VendorDetails vendordetails={vendor}/>
                                     </section>
                                 </Link>
                             </div>
                     }else{
-                        return <div className ="vendors__item" >
-                                <Link to = {`${vendor}`} className="vendors__link">
+                        return <div className ="vendors__item">
+                                <Link to = {`${vendor.title}`} className="vendors__link">
                                     <section  key = {index} className ="vendors__section__item">
-                                        <h3>{vendor}</h3>
+                                        <VendorDetails vendordetails={vendor}/>
                                     </section>
                                 </Link>
                             </div>
