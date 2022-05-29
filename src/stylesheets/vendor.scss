@@ -1,11 +1,52 @@
-/* Define standard variables and values for website */
-$bgcolor: lightblue;
-$textcolor: darkblue;
-$fontsize: 18px;
+@import "reset";
 
-/* Use the variables */
-body {
-  background-color: $bgcolor;
-  color: $textcolor;
-  font-size: $fontsize;
+// .container{
+//   width:
+// }
+@mixin flex{
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@mixin flex--column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vendors__item{
+  @include flex();
+  height:260px;
+  width: 100%;
+}
+.vendors__section__item {	
+	width:calc(100% - 32px);
+	height: 248px;
+	max-width: 567px;
+	min-width: min(calc(100% - 4px),260px);
+	background-color: var(--card-bg);
+	direction: rtl;
+	border-radius: 6px;
+	border: solid 0.5px var(--divider-color);
+	-webkit-box-shadow: var(--card-shadow);
+	box-shadow: var(--card-shadow);
+  cursor: pointer;
+}
+.vendors__link{
+  @include flex--column();
+  width:100%;
+  height:100%;
+}
+.vendors__item__box{
+  @include flex--column();
+  position: relative;
+  width:100%;
+  
 }

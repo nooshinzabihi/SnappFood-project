@@ -1,0 +1,56 @@
+// my variables
+/* Define standard variables and values for website */
+$bgcolor: #fff;
+$textcolor: #000;
+$fontsize: 18px;
+
+:root {
+    --card-size: 100%;
+	--img-size: 130px;
+    --card-bg : rgb(255, 255, 255);
+    --divider-color : rgba(58, 61, 66, 0.06);
+    --card-shadow :rgb(58 61 66 / 6%) 0px 1px 0px, rgb(0 0 0 / 5%) 0px 2px 8px -2px;
+    --text-medium:16px;
+    --font-regular:500;
+}
+
+html, body, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: $bgcolor;
+    color: $textcolor;
+    font-size: $fontsize;
+}
+a {
+    &{
+        text-decoration: none;
+        color:$textcolor;
+    }
+	&:hover {
+		text-decoration: none;
+	}
+	&:active {
+		text-decoration: none;
+	}
+}
+
+h3{
+    font-size: var(--text-medium);
+    font-weight: var(--font-regular);
+    color: $textcolor;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    position: relative;
+    width: unset;
+    max-width: 100%;
+    margin-left: 4px;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+}
+
+

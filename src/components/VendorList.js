@@ -24,27 +24,32 @@ function VendorList (){
       }, [loading , hasMore])
 
     return (
-        <>
-        
-            {vendors.map((vendor , index) => {
-                if (vendors.length === index + 1 ){
-                    return <div ref={lastVendorElementRef} key ={index}>
-                            <Link to = {`${vendor}`} >
-                                {vendor}
-                            </Link>
-                        </div>
-                }else{
-                    return <div  key = {index}>
-                        <Link to = {`${vendor}`} >
-                            {vendor}
-                        </Link>
-                    </div>
-                }
-            })}
-            <div>{loading && 'در حال بارگذاری ...'}</div>
-            <div>{error && 'خطایی رخ داده است .'}</div>
-           
-        </>
+        <div className="container">
+            <div className ="vendors__item__box">
+                {vendors.map((vendor , index) => {
+                    if (vendors.length === index + 1 ){
+                        return <div className ="vendors__item">
+                                <Link to = {`${vendor}`} className="vendors__link">
+                                    <section ref={lastVendorElementRef} key ={index} className ="vendors__section__item">
+                                        <h3>{vendor}</h3>
+                                    </section>
+                                </Link>
+                            </div>
+                    }else{
+                        return <div className ="vendors__item" >
+                                <Link to = {`${vendor}`} className="vendors__link">
+                                    <section  key = {index} className ="vendors__section__item">
+                                        <h3>{vendor}</h3>
+                                    </section>
+                                </Link>
+                            </div>
+                    }
+                })}
+                <div>{loading && 'در حال بارگذاری ...'}</div>
+                <div>{error && 'خطایی رخ داده است .'}</div>
+            
+            </div>
+        </div>
     )
 }
 
