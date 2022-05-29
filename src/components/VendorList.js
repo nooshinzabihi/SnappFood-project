@@ -13,7 +13,6 @@ function VendorList (){
         hasMore 
     } = useVendorList (pageNumber)
 
-    console.log(vendors , 55555);
 
     const observer = useRef();
     const lastVendorElementRef = useCallback((node )=> {
@@ -28,10 +27,10 @@ function VendorList (){
       }, [loading , hasMore])
 
     return (
-        <div className="container">
+        <div className="container"> 
+            <header>  فروشنده باز اسنپ فود</header>
             <div className ="vendors__item__box">
                 {vendors.map((vendor , index) => {
-                    console.log(vendor)
                     if (vendors.length === index + 1 ){
                         return <div className ="vendors__item" >
                                 <Link to = {`${vendor.title}`} className="vendors__link">

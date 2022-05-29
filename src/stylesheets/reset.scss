@@ -1,27 +1,43 @@
+
+
+@font-face {
+    font-family: 'iransans';
+    src: url('https://cdn.snappfood.ir/pwa/assets/fonts/woff2/IRANSansWeb.eot'),
+         url('https://cdn.snappfood.ir/pwa/assets/fonts/woff2/IRANSansWeb.woff2') format('woff'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 // my variables
 /* Define standard variables and values for website */
 $bgcolor: #fff;
 $textcolor: #000;
-$fontsize: 18px;
+$fontsize: 16px;
 
 :root {
     --card-size: 100%;
 	--img-size: 130px;
     --card-bg : rgb(255, 255, 255);
     --divider-color : rgba(58, 61, 66, 0.06);
-    --card-shadow :rgb(58 61 66 / 6%) 0px 1px 0px, rgb(0 0 0 / 5%) 0px 2px 8px -2px;
-    --text-medium:16px;
+    --alpha-carbon-grey:rgba(64, 64, 64, 0.04);
+    --card-shadow :rgb(58 61 66 / 6%) 0px 1px 0px, rgb(0 0 0 / 30%) 0px 8px 32px -16px;
+    --text-large:16px;
+    --text-medium:14px;
+    --text-small:12px;
     --font-regular:500;
+    --font-family:'iransans';
+    --text-color-light:#a3a3a3;
 }
 
 html, body, ul, ol {
     margin: 0;
     padding: 0;
-}
-body {
-    background-color: $bgcolor;
-    color: $textcolor;
-    font-size: $fontsize;
+    font-family: var(--font-family);
+    body {
+        background-color: $bgcolor;
+        color: $textcolor;
+        font-size: $fontsize;
+    }
 }
 a {
     &{
@@ -37,7 +53,7 @@ a {
 }
 
 h3{
-    font-size: var(--text-medium);
+    font-size: var(--text-large);
     font-weight: var(--font-regular);
     color: $textcolor;
     width: 100%;
@@ -52,5 +68,14 @@ h3{
     text-overflow: ellipsis;
     line-height: 1.5;
 }
+
+
+
+
+
+
+
+
+
 
 
